@@ -1,0 +1,14 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.clear {
+  clear: both;
+}
+
+.wrapper {
+  margin: 50px auto;
+  width: 950px;
+  text-align: center;
+}

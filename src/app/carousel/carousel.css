@@ -1,0 +1,10 @@
+.carousel .thumbnail {
+  width: 175px;
+  height: 600px;
+  float: left;
+}
+
+.carousel .image {
+  width: 600px;
+  float: left;
+}

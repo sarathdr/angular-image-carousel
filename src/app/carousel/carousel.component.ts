@@ -10,7 +10,7 @@ import { Image } from '../model';
       <div class="thumbnail previous">
         <thumbnail
           *ngIf="index !== 0"
-          (click)="previous()"
+          (click)="index = index-1;"
           [image]="images[index-1]">
         </thumbnail>
       </div>
@@ -20,11 +20,10 @@ import { Image } from '../model';
       <div class="thumbnail next">
         <thumbnail
           *ngIf="index !== (images.length -1)"
-          (click)="next()"
+          (click)="index = index+1;"
           [image]="images[index + 1]">
         </thumbnail>
       </div>
-      <div class="clear"></div>
     </div>
   `,
   styleUrls: ['./carousel.css']
@@ -32,18 +31,8 @@ import { Image } from '../model';
 export class CarouselComponent {
 
   @Input() images: Image[] = [];
-
   index = 0;
 
   constructor() {
   }
-
-  previous() {
-    this.index--;
-  }
-
-  next() {
-    this.index++;
-  }
-
 }

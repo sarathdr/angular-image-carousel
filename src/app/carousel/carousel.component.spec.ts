@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ThumbnailComponent } from './thumbnail/thumbnail.component';
@@ -42,7 +42,7 @@ describe('CarouselComponent', () => {
   });
 
   it('should load the next image', () => {
-    component.next();
+    fixture.debugElement.nativeElement.querySelector('.next thumbnail').click();
     fixture.detectChanges();
     expect(component.index).toEqual(1);
     expect(fixture.debugElement.nativeElement.querySelector('p').textContent).toEqual('Image2');
@@ -52,7 +52,7 @@ describe('CarouselComponent', () => {
     component.index = 2;
     fixture.detectChanges();
     expect(fixture.debugElement.nativeElement.querySelector('p').textContent).toEqual('Image3');
-    component.previous();
+    fixture.debugElement.nativeElement.querySelector('.previous thumbnail').click();
     fixture.detectChanges();
     expect(fixture.debugElement.nativeElement.querySelector('p').textContent).toEqual('Image2');
   });
